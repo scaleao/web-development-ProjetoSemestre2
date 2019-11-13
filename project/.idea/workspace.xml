@@ -14,6 +14,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
@@ -104,9 +107,10 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1SuJcg7S3Qe08e7GmxWLP0wLd5L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -116,6 +120,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\templetes\layout\homeLayout" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jscal\Desktop\JoaoScaleao\Faculdade\3º Ano\Programação III\2º Trabalho\project\public\image" />
     </key>
@@ -155,10 +162,25 @@
       <workItem from="1572816041377" duration="20731000" />
       <workItem from="1573248588064" duration="1945000" />
       <workItem from="1573440337216" duration="13228000" />
+      <workItem from="1573611262691" duration="787000" />
+      <workItem from="1573612864533" duration="8642000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

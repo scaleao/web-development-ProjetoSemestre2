@@ -43,6 +43,10 @@ Route::get('/login', function () {
     return view('viewsHome.login');
 });
 
+Route::get('/timeline', function () {
+    return view('viewsTimeline.index');
+});
+
 Route::post('/cadastro', ['as'=>'user.register', 'uses'=>'UserController@store']);
 
 /*

@@ -1,6 +1,6 @@
 @extends('templetes.home')
 
-@section('titulo', 'Inicio');
+@section('titulo', 'Inicio')
 
 @section('conteudo')
     </br>
