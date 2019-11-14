@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserStoreRequest;
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -33,8 +34,11 @@ class UserController extends Controller
         }
     }
 
-    function read(){
-
+    function login(Request $request){
+        $data = $request->all();
+        if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['senha']])){
+            return redirect('/timeline');
+        }
     }
 
     function update(){

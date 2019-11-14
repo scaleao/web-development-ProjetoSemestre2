@@ -4,12 +4,12 @@
     </div>
 
     <ul class="list-unstyled components">
-        <p>Nome do usuario</p>
+        <p>{{Auth::user()->username}}</p>
         <li class="active">
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Perfil</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Perfil</a>
+                    <a href="{{route('user.perfil')}}">Perfil</a>
                 </li>
                 <li>
                     <a href="#">Documentos</a>

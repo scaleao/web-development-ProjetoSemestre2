@@ -43,11 +43,19 @@ Route::get('/login', function () {
     return view('viewsHome.login');
 });
 
-Route::get('/timeline', function () {
-    return view('viewsTimeline.index');
+
+Route::group(['middleware'=>'auth'],function() {
+
+    Route::get('/timeline', function () {
+        return view('viewsTimeline.index');
+    });
+
+    Route::get('/perfil', ['as'=>'user.perfil', 'uses'=>'PerfilController@index']);
+    Route::put('/perfil/', ['as'=>'user.update', 'uses'=>'PerfilController@update']);
 });
 
 Route::post('/cadastro', ['as'=>'user.register', 'uses'=>'UserController@store']);
+Route::post('/login', ['as'=>'user.login', 'uses'=>'UserController@login']);
 
 /*
 Route::get('/index', ['uses', 'HomeController@index']);

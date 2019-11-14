@@ -14,9 +14,10 @@
     </div>
     <div class="row">
         <div class="container border border-secondary rounded col-md-4 mb-3">
-            <form method="" action="">
+            <form method="post" action="{{route('user.login')}}">
+                {{csrf_field()}}
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="login" placeholder="Login">
+                    <input type="text" class="form-control" name="email" placeholder="Login: chico@mail.com">
                 </div>
                 <div class="form-group">
                     <div class="text-right"><a href="#">Esqueceu sua senha?<a></div>
