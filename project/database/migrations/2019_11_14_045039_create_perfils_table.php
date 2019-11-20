@@ -15,20 +15,19 @@ class CreatePerfilsTable extends Migration
     {
         Schema::create('perfils', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('imagem');
-            $table->string('rua')->default('');
-            $table->string('numero')->default('');
-            $table->string('bairro')->default('');
-            $table->string('cidade')->default('');
-            $table->string('estado')->default('');
-            $table->string('cep')->default('');
-            $table->string('profissao')->default('');
-            $table->string('nomeC')->default('');
-            $table->string('numeroC')->default('');
-            $table->string('dataValiC')->default('');
-            $table->string('digitoC')->default('');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('rua');
+            $table->string('numero');
+            $table->string('bairro');
+            $table->string('cidade');
+            $table->string('estado');
+            $table->string('cep');
+            $table->string('profissao');
+            $table->string('nomeC');
+            $table->string('numeroC');
+            $table->string('dataValiC');
+            $table->string('digitoC');
+            $table->unsignedBigInteger('user_id');
+            //$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

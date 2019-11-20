@@ -110,7 +110,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image/users" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -120,11 +120,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\public\image\users" />
+      <recent name="C:\Users\jscal\Desktop\JoaoScaleao\Faculdade\3º Ano\Programação III\2º Trabalho\project\public\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\templetes\layout\homeLayout" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jscal\Desktop\JoaoScaleao\Faculdade\3º Ano\Programação III\2º Trabalho\project\public\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -166,7 +167,11 @@
       <workItem from="1573612864533" duration="8642000" />
       <workItem from="1573672038752" duration="8379000" />
       <workItem from="1573702440173" duration="4552000" />
-      <workItem from="1573707151787" duration="8021000" />
+      <workItem from="1573707151787" duration="8143000" />
+      <workItem from="1573760496068" duration="1198000" />
+      <workItem from="1573834156286" duration="3683000" />
+      <workItem from="1573926116582" duration="261000" />
+      <workItem from="1574183933555" duration="2856000" />
     </task>
     <servers />
   </component>
