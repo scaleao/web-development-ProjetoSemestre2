@@ -51,7 +51,10 @@ Route::group(['middleware'=>'auth'],function() {
     });
 
     Route::get('/perfil', ['as'=>'user.perfil', 'uses'=>'PerfilController@index']);
-    Route::put('/perfil/', ['as'=>'user.update', 'uses'=>'PerfilController@update']);
+    Route::post('/perfil', ['as'=>'user.update', 'uses'=>'PerfilController@store']);
+
+    Route::get('/add_documento', ['as'=>'user.add_documento', 'uses'=>'DocumentoController@index']);
+    Route::post('/add_documento', ['as'=>'user.add_documento', 'uses'=>'DocumentoController@store']);
 });
 
 Route::post('/cadastro', ['as'=>'user.register', 'uses'=>'UserController@store']);

@@ -15,17 +15,17 @@ class CreatePerfilsTable extends Migration
     {
         Schema::create('perfils', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('rua');
-            $table->string('numero');
-            $table->string('bairro');
-            $table->string('cidade');
-            $table->string('estado');
-            $table->string('cep');
-            $table->string('profissao');
-            $table->string('nomeC');
-            $table->string('numeroC');
-            $table->string('dataValiC');
-            $table->string('digitoC');
+            $table->string('rua')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('estado')->nullable();
+            $table->string('cep')->nullable();
+            $table->string('profissao')->nullable();
+            $table->string('nomeC')->nullable();
+            $table->string('numeroC')->nullable();
+            $table->string('dataValiC')->nullable();
+            $table->string('digitoC')->nullable();
             $table->unsignedBigInteger('user_id');
             //$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

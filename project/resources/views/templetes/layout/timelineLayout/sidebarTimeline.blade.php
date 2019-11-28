@@ -20,7 +20,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">Cadastrar documentos</a>
+            <a href="{{route('user.add_documento')}}">Cadastrar documentos</a>
         </li>
         <!--<li> EXEMPLO DE LISTA ATIVA
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>

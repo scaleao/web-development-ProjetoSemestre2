@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Perfil;
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 
 class PerfilController extends Controller
@@ -14,10 +15,17 @@ class PerfilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$registro = User::find($id);
-        return view('viewsTimeline/perfil');
+        $id = Auth::user()->id;
+        $data = Perfil::where('user_id', $id)->get()->first();
+        if($data){
+            return view('viewsTimeline/perfil', compact('data'));
+        }
+        else{
+            return view('viewsTimeline/perfil');
+        }
+
     }
 
     /**
@@ -38,7 +46,19 @@ class PerfilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->flash();
+
+        $id = Auth::user()->id;
+        $userPerfil = Perfil::where('user_id', $id)->get()->first();
+        if($userPerfil){
+            $this->update($request);
+            return redirect('/timeline');
+        }
+        else{
+            $data = $request->all();
+            Perfil::create($data);
+            redirect('/perfil');
+        }
     }
 
     /**
@@ -70,9 +90,11 @@ class PerfilController extends Controller
      * @param  \App\Perfil  $perfil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perfil $perfil)
+    public function update(Request $request)
     {
-        //
+        $id = Auth::user()->id;
+        $data = $request->all();
+        Perfil::find($id)->update($data);
     }
 
     /**
