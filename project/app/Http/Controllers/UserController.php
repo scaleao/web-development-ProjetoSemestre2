@@ -6,6 +6,8 @@ use App\Http\Requests\UserStoreRequest;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\Solicitacao;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -35,9 +37,24 @@ class UserController extends Controller
     }
 
     function login(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'senha' => 'required'
+        ]);
         $data = $request->all();
         if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['senha']])){
-            return redirect('/timeline');
+            $id = (int) Auth::user()->id;
+            $solicitacoes = Solicitacao::where('user_destino', $id)->get();
+            /*$solicitacoes = DB::statement("CREATE VIEW v_solicitacoes AS
+                        SELECT s.created_at, u.name, d.name , d.description
+                        FROM solicitacaos s, users u, documentos d
+                        WHERE s.user_destino = u.id AND
+                              s.documento_id = d.id
+                              ORDER BY s.created_at DESC")->;*/
+            return view('viewsTimeline/index', compact('solicitacoes'));
+        }
+        else{
+            return redirect('/login');
         }
     }
 

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Documento extends Model
+class Solicitacao extends Model
 {
     protected $fillable = [
-        'name', 'type', 'description', 'name_file', 'user_id'
+        'assinado', 'user_id', 'user_destino', 'documento_id'
     ];
 }

@@ -7,6 +7,15 @@
 </br>
 <div class="row">
     <div class="container border border-secondary">
+        @if ($errors->any())
+            <div>
+                <ul class="bg-danger">
+                    @foreach ($errors->all() as $error)
+                        <li class="text-white">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route('user.register')}}" method="post" class="needs-validation" novalidate>
             {{csrf_field()}}
             <div class="form-row">
@@ -16,6 +25,9 @@
                     <div class="valid-tooltip">
                         Tudo certo!
                     </div>
+                    @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationTooltipUsername">Username</label>
@@ -28,6 +40,9 @@
                             Por favor, escolha um usuário válido e único.
                         </div>
                     </div>
+                    @error('username')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
             </div><!--
             <div class="form-row">
@@ -80,19 +95,31 @@
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault06">CPF</label>
                         <input type="text" class="form-control" id="validationDefault06" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
+                        @error('cpf')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault06">Email</label>
                         <input type="text" class="form-control" id="validationDefault07" name="email" placeholder="chico@mail.com.br" required>
+                        @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault07">Senha</label>
                         <input type="password" class="form-control" name="password" id="validationDefault08" required>
+                        @error('password')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             <div class="form-group custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" name="checkbox" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Concordo com os <a href="#">termos</a> de uso</label>
+                @error('checkbox')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <button class="btn btn-primary" type="submit">Cadastrar</button>
         </form>

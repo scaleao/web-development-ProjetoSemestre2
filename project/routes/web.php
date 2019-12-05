@@ -53,8 +53,14 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/perfil', ['as'=>'user.perfil', 'uses'=>'PerfilController@index']);
     Route::post('/perfil', ['as'=>'user.update', 'uses'=>'PerfilController@store']);
 
-    Route::get('/add_documento', ['as'=>'user.add_documento', 'uses'=>'DocumentoController@index']);
-    Route::post('/add_documento', ['as'=>'user.add_documento', 'uses'=>'DocumentoController@store']);
+    Route::get('/documento', ['as'=>'user.documento', 'uses'=>'DocumentoController@index']);
+    Route::get('/documento/adicionar', ['as'=>'user.adicionar', 'uses'=>'DocumentoController@create']);
+    Route::post('/documento/add_documento', ['as'=>'user.add_documento', 'uses'=>'DocumentoController@store']);
+    Route::get('/documento/del_documento/{id}', ['as'=>'user.del_documento', 'uses'=>'DocumentoController@destroy']);
+
+    Route::get('/solicitacao', ['as'=>'user.add_solicitacao', 'uses'=>'SolicitacaoController@create']);
+    Route::post('/solicitacao', ['as'=>'user.add_solicitacao', 'uses'=>'SolicitacaoController@store']);
+
 });
 
 Route::post('/cadastro', ['as'=>'user.register', 'uses'=>'UserController@store']);

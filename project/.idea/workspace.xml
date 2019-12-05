@@ -120,12 +120,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\templetes\layout\homeLayout" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\public\image\users" />
       <recent name="C:\Users\jscal\Desktop\JoaoScaleao\Faculdade\3º Ano\Programação III\2º Trabalho\project\public\image" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\templetes\layout\homeLayout" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -174,7 +174,16 @@
       <workItem from="1574183933555" duration="4107000" />
       <workItem from="1574386831991" duration="420000" />
       <workItem from="1574445702742" duration="22352000" />
-      <workItem from="1574896311127" duration="8549000" />
+      <workItem from="1574896311127" duration="8807000" />
+      <workItem from="1575049628090" duration="4988000" />
+      <workItem from="1575062720205" duration="2186000" />
+      <workItem from="1575163993214" duration="1013000" />
+      <workItem from="1575223750818" duration="10231000" />
+      <workItem from="1575292244708" duration="4373000" />
+      <workItem from="1575327562475" duration="3227000" />
+      <workItem from="1575411863113" duration="743000" />
+      <workItem from="1575414751995" duration="4221000" />
+      <workItem from="1575420678535" duration="7431000" />
     </task>
     <servers />
   </component>

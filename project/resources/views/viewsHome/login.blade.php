@@ -14,14 +14,23 @@
     </div>
     <div class="row">
         <div class="container border border-secondary rounded col-md-4 mb-3">
+            @if ($errors->any())
+                <div>
+                    <ul class="bg-danger">
+                        @foreach ($errors->all() as $error)
+                            <li class="text-white">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form method="post" action="{{route('user.login')}}">
                 {{csrf_field()}}
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="email" placeholder="Login: chico@mail.com">
+                    <input type="text" class="form-control" name="email" placeholder="Login: chico@mail.com" required>
                 </div>
                 <div class="form-group">
                     <div class="text-right"><a href="#">Esqueceu sua senha?<a></div>
-                    <input type="password" class="form-control" name="senha">
+                    <input type="password" class="form-control" name="senha" required>
                 </div>
                 <div class="form-group custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" name="checkbox" id="customCheck1">

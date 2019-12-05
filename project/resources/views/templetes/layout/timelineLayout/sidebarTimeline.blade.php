@@ -12,7 +12,7 @@
                     <a href="{{route('user.perfil')}}">Perfil</a>
                 </li>
                 <li>
-                    <a href="#">Documentos</a>
+                    <a href="{{route('user.documento')}}">Documentos</a>
                 </li>
                 <li>
                     <a href="#">Meus contatos</a>
@@ -20,7 +20,7 @@
             </ul>
         </li>
         <li>
-            <a href="{{route('user.add_documento')}}">Cadastrar documentos</a>
+            <a href="{{route('user.adicionar')}}">Cadastrar documentos</a>
         </li>
         <!--<li> EXEMPLO DE LISTA ATIVA
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
@@ -37,7 +37,7 @@
             </ul>
         </li>-->
         <li>
-            <a href="#">Enviar solicitação</a>
+            <a href="{{route('user.add_solicitacao')}}">Enviar solicitação</a>
         </li>
         <li>
             <a href="#">Ajuda</a>

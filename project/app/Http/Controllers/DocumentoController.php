@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Documento;
 use Illuminate\Http\Request;
+use Auth;
 
 class DocumentoController extends Controller
 {
@@ -14,7 +15,10 @@ class DocumentoController extends Controller
      */
     public function index()
     {
-        return view('viewsTimeline/addDocumento');
+        $id = Auth::user()->id;
+        $documentos = Documento::where('user_id', $id)->get();
+
+        return view('viewsTimeline/viewDocumentos', compact('documentos'));
     }
 
     /**
@@ -24,7 +28,7 @@ class DocumentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('viewsTimeline/addDocumento');
     }
 
     /**
@@ -35,7 +39,26 @@ class DocumentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'name_file' => 'required',
+        ]);
+        $data = $request->all();
+
+        if($request->hasFile('name_file')){
+            $fileDoc = $request->file('name_file');
+            $num = rand(11111, 99999);
+            $dir = "/image/document";
+            $extension = $fileDoc->guessClientExtension();
+            $nameDoc = "document_".$num.".".$extension;
+            $fileDoc->move($dir, $nameDoc);
+            $data['name_file'] = $dir."/".$nameDoc;
+        }
+
+        Documento::create($data);
+        return redirect('/timeline');
     }
 
     /**
@@ -78,8 +101,14 @@ class DocumentoController extends Controller
      * @param  \App\Documento  $documento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Documento $documento)
+    public function destroy($id)
     {
-        //
+        $documento = Documento::find($id);
+
+        if(!isset($documento)){
+            echo "deu merda";
+        }
+        $documento->delete();
+        redirect('/documento');
     }
 }
