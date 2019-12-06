@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Documento;
 use Auth;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class SolicitacaoController extends Controller
 {
@@ -17,7 +18,17 @@ class SolicitacaoController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+
+        $solicitacoes = DB::table('solicitacaos')
+            ->join('users', 'user_destino', '=', 'users.id')
+            ->join('documentos', 'documento_id', '=', 'documentos.id')
+            ->select('solicitacaos.id', 'solicitacaos.created_at', 'users.username', 'documentos.name', 'documentos.type', 'documentos.description')
+            ->where('solicitacaos.user_destino', $id)
+            ->orderBy('solicitacaos.created_at', 'desc')
+            ->get();
+
+        return view('viewsTimeline/index', compact('solicitacoes'));
     }
 
     /**
@@ -71,9 +82,21 @@ class SolicitacaoController extends Controller
      * @param  \App\Solicitacao  $solicitacao
      * @return \Illuminate\Http\Response
      */
-    public function show(Solicitacao $solicitacao)
+    public function show($id)
     {
-        //
+        //SELECT u.email, d.name, d.type, d.description
+        // FROM solicitacaos s, documentos d, users u
+        // WHERE s.user_id = u.id AND
+        //  s.documento_id = d.id AND
+        //  s.id = 1
+        $info_solici = DB::table('solicitacaos')
+            ->join('users', 'user_id', '=', 'users.id')
+            ->join('documentos', 'documento_id', '=', 'documentos.id')
+            ->where('solicitacaos.id', $id)
+            ->select('users.email', 'solicitacaos.created_at', 'users.username', 'documentos.name', 'documentos.type', 'documentos.description')
+            ->first();
+        //dd($info_solici);
+        return view('viewsTimeline/viewSolicitacao', compact('info_solici'));
     }
 
     /**

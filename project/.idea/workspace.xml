@@ -110,7 +110,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/viewsTimeline" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -120,12 +120,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\templetes\layout\homeLayout" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\viewsTimeline" />
       <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\public\image\users" />
       <recent name="C:\Users\jscal\Desktop\JoaoScaleao\Faculdade\3º Ano\Programação III\2º Trabalho\project\public\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\João Scaleão\Documents\GitHub\web-development-ProjetoSemestre2\project\resources\views\templetes\layout\homeLayout" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -183,7 +184,8 @@
       <workItem from="1575327562475" duration="3227000" />
       <workItem from="1575411863113" duration="743000" />
       <workItem from="1575414751995" duration="4221000" />
-      <workItem from="1575420678535" duration="7431000" />
+      <workItem from="1575420678535" duration="7988000" />
+      <workItem from="1575591526263" duration="8203000" />
     </task>
     <servers />
   </component>

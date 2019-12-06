@@ -46,9 +46,7 @@ Route::get('/login', function () {
 
 Route::group(['middleware'=>'auth'],function() {
 
-    Route::get('/timeline', function () {
-        return view('viewsTimeline.index');
-    });
+
 
     Route::get('/perfil', ['as'=>'user.perfil', 'uses'=>'PerfilController@index']);
     Route::post('/perfil', ['as'=>'user.update', 'uses'=>'PerfilController@store']);
@@ -58,8 +56,10 @@ Route::group(['middleware'=>'auth'],function() {
     Route::post('/documento/add_documento', ['as'=>'user.add_documento', 'uses'=>'DocumentoController@store']);
     Route::get('/documento/del_documento/{id}', ['as'=>'user.del_documento', 'uses'=>'DocumentoController@destroy']);
 
+    Route::get('/timeline', ['as'=>'user.index_solicitacao', 'uses'=>'SolicitacaoController@index']);
     Route::get('/solicitacao', ['as'=>'user.add_solicitacao', 'uses'=>'SolicitacaoController@create']);
     Route::post('/solicitacao', ['as'=>'user.add_solicitacao', 'uses'=>'SolicitacaoController@store']);
+    Route::get('/solicitacao/{id}', ['as'=>'user.view_solicitacao', 'uses'=>'SolicitacaoController@show']);
 
 });
 

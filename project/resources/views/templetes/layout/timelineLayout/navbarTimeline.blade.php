@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/timeline">Inicio</a>
+                    <a class="nav-link" href="{{route('user.index_solicitacao')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Envios</a>

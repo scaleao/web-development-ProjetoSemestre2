@@ -43,15 +43,7 @@ class UserController extends Controller
         ]);
         $data = $request->all();
         if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['senha']])){
-            $id = (int) Auth::user()->id;
-            $solicitacoes = Solicitacao::where('user_destino', $id)->get();
-            /*$solicitacoes = DB::statement("CREATE VIEW v_solicitacoes AS
-                        SELECT s.created_at, u.name, d.name , d.description
-                        FROM solicitacaos s, users u, documentos d
-                        WHERE s.user_destino = u.id AND
-                              s.documento_id = d.id
-                              ORDER BY s.created_at DESC")->;*/
-            return view('viewsTimeline/index', compact('solicitacoes'));
+            return redirect()->route('user.index_solicitacao');
         }
         else{
             return redirect('/login');
