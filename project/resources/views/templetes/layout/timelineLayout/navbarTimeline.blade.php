@@ -21,7 +21,7 @@
                     <a class="nav-link" href="#">Recebidos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Assinaturas</a>
+                    <a class="nav-link" href="{{route('user.index_assinatura')}}">Assinaturas</a>
                 </li>
             </ul>
         </div>

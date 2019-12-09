@@ -57,7 +57,7 @@ class PerfilController extends Controller
         else{
             $data = $request->all();
             Perfil::create($data);
-            redirect('/perfil');
+            return redirect('/perfil');
         }
     }
 

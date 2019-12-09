@@ -61,6 +61,8 @@ Route::group(['middleware'=>'auth'],function() {
     Route::post('/solicitacao', ['as'=>'user.add_solicitacao', 'uses'=>'SolicitacaoController@store']);
     Route::get('/solicitacao/{id}', ['as'=>'user.view_solicitacao', 'uses'=>'SolicitacaoController@show']);
 
+    Route::get('/assinaturas', ['as'=>'user.index_assinatura', 'uses'=>'AssinaturaController@index']);
+    Route::post('/assinaturas/{id}', ['as'=>'user.add_assinatura', 'uses'=>'AssinaturaController@store']);
 });
 
 Route::post('/cadastro', ['as'=>'user.register', 'uses'=>'UserController@store']);

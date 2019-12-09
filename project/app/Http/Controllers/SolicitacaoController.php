@@ -23,7 +23,8 @@ class SolicitacaoController extends Controller
         $solicitacoes = DB::table('solicitacaos')
             ->join('users', 'user_destino', '=', 'users.id')
             ->join('documentos', 'documento_id', '=', 'documentos.id')
-            ->select('solicitacaos.id', 'solicitacaos.created_at', 'users.username', 'documentos.name', 'documentos.type', 'documentos.description')
+            ->select('solicitacaos.id', 'solicitacaos.created_at', 'users.username',
+                             'documentos.name', 'documentos.type', 'documentos.description')
             ->where('solicitacaos.user_destino', $id)
             ->orderBy('solicitacaos.created_at', 'desc')
             ->get();
@@ -93,7 +94,8 @@ class SolicitacaoController extends Controller
             ->join('users', 'user_id', '=', 'users.id')
             ->join('documentos', 'documento_id', '=', 'documentos.id')
             ->where('solicitacaos.id', $id)
-            ->select('users.email', 'solicitacaos.created_at', 'users.username', 'documentos.name', 'documentos.type', 'documentos.description')
+            ->select('users.email', 'solicitacaos.id', 'solicitacaos.created_at', 'users.username',
+                             'documentos.name', 'documentos.type', 'documentos.description', 'solicitacaos.assinado')
             ->first();
         //dd($info_solici);
         return view('viewsTimeline/viewSolicitacao', compact('info_solici'));

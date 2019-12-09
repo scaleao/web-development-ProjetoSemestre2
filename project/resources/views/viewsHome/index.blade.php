@@ -19,7 +19,7 @@
     </br>
     <div class="row">
         <div class="container justify-content-center">
-            <h1 class="text-center" style="font-family: Anton">VALOZIRE SEU NEGÓCIO</h1>
+            <h1 class="text-center" style="font-family: Anton">VALORIZE SEU NEGÓCIO</h1>
         </div>
     </div>
     </br>
