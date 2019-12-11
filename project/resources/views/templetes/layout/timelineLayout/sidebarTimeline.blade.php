@@ -46,7 +46,7 @@
 
     <ul class="list-unstyled CTAs">
         <li>
-            <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Sair</a>
+            <a href="{{route('user.logout')}}" class="btn btn-danger">Sair</a>
         </li>
     </ul>
 </nav>

@@ -57,4 +57,9 @@ class UserController extends Controller
     function delete(){
 
     }
+
+    function logout(){
+        Auth::logout();
+        return redirect('/');
+    }
 }

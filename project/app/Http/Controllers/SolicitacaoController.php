@@ -21,10 +21,10 @@ class SolicitacaoController extends Controller
         $id = Auth::user()->id;
 
         $solicitacoes = DB::table('solicitacaos')
-            ->join('users', 'user_destino', '=', 'users.id')
+            ->join('users', 'user_id', '=', 'users.id')
             ->join('documentos', 'documento_id', '=', 'documentos.id')
             ->select('solicitacaos.id', 'solicitacaos.created_at', 'users.username',
-                             'documentos.name', 'documentos.type', 'documentos.description')
+                             'documentos.name', 'documentos.type', 'documentos.description', 'users.email')
             ->where('solicitacaos.user_destino', $id)
             ->orderBy('solicitacaos.created_at', 'desc')
             ->get();

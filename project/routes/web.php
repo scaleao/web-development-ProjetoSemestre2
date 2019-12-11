@@ -45,9 +45,6 @@ Route::get('/login', function () {
 
 
 Route::group(['middleware'=>'auth'],function() {
-
-
-
     Route::get('/perfil', ['as'=>'user.perfil', 'uses'=>'PerfilController@index']);
     Route::post('/perfil', ['as'=>'user.update', 'uses'=>'PerfilController@store']);
 
@@ -63,6 +60,9 @@ Route::group(['middleware'=>'auth'],function() {
 
     Route::get('/assinaturas', ['as'=>'user.index_assinatura', 'uses'=>'AssinaturaController@index']);
     Route::post('/assinaturas/{id}', ['as'=>'user.add_assinatura', 'uses'=>'AssinaturaController@store']);
+    Route::get('/assinaturas/{id}', ['as'=>'user.view_assinatura', 'uses'=>'AssinaturaController@show']);
+
+    Route::get('/logout', ['as'=>'user.logout', 'uses'=>'UserController@logout']);
 });
 
 Route::post('/cadastro', ['as'=>'user.register', 'uses'=>'UserController@store']);
