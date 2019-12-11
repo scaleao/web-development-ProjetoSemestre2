@@ -1,0 +1,11 @@
+SELECT p.profissao, u.cpf, u.name, u.email, d.name, d.type, d.description, s.created_at, a.created_at 
+FROM users u, documentos d, solicitacaos s, assinaturas a, perfils p 
+WHERE s.assinado = 'true' AND
+
+       s.id = a.solicitacao_id AND
+       s.user_id = u.id AND
+       s.user_destino = a.user_destino AND
+       s.documento_id = d.id AND
+       s.documento_id = d.user_id AND
+       p.user_id = u.id AND
+      a.id = 1
